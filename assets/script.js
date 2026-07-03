@@ -1,43 +1,43 @@
-// Countdown to Yara's birthday (July 7)
-function getNextBirthday() {
-  const now = new Date();
-  const year = now.getFullYear();
-  let target = new Date(year, 6, 7, 0, 0, 0); // month is 0-indexed: 6 = July
-  const endOfBirthday = new Date(year, 6, 8, 0, 0, 0);
-  if (now >= endOfBirthday) {
-    target = new Date(year + 1, 6, 7, 0, 0, 0);
+// Matrix-style letter rain inside the hero banner (gold/teal, no pink)
+(function matrixRain() {
+  const canvas = document.getElementById("matrix-canvas");
+  const hero = canvas.parentElement;
+  const ctx = canvas.getContext("2d");
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const fontSize = 18;
+  const colors = ["#17b8a6", "#5b3ea6", "#ffcf56"];
+  let columns, drops;
+
+  function resize() {
+    canvas.width = hero.clientWidth;
+    canvas.height = hero.clientHeight;
+    columns = Math.floor(canvas.width / fontSize);
+    drops = new Array(columns).fill(0).map(() => Math.random() * -40);
   }
-  return target;
-}
+  window.addEventListener("resize", resize);
+  resize();
 
-function updateCountdown() {
-  const now = new Date();
-  const target = getNextBirthday();
-  const isToday = now.toDateString() === new Date(now.getFullYear(), 6, 7).toDateString();
-  const messageEl = document.getElementById("countdown-message");
-  const countdownEl = document.getElementById("countdown");
+  function draw() {
+    ctx.fillStyle = "rgba(20, 12, 40, 0.18)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${fontSize}px "Courier New", monospace`;
 
-  if (isToday) {
-    countdownEl.style.display = "none";
-    messageEl.textContent = "🎂 It's Yara's birthday today! 🎉";
-    return;
+    for (let i = 0; i < columns; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillStyle = colors[i % colors.length];
+      ctx.globalAlpha = 0.55;
+      ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+      ctx.globalAlpha = 1;
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+    requestAnimationFrame(draw);
   }
-
-  const diff = target - now;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-  messageEl.textContent = "";
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  draw();
+})();
 
 // Lightweight confetti animation (no pink!)
 (function confetti() {
