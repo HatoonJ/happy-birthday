@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday QR Codes</title>
+<script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+<style>
+  :root {
+    --purple-dark: #241646;
+    --purple: #5b3ea6;
+    --teal: #17b8a6;
+    --gold: #ffcf56;
+    --orange: #ff8c42;
+    --cream: #fff9f0;
+    --dark-bg: #0d1117;
+    --green: #39ff9c;
+    --cyan: #4ad9ff;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(160deg, #1b1030 0%, #0d1117 100%);
+    color: var(--cream);
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+    text-align: center;
+  }
+  h1 {
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .cards {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    width: 260px;
+    padding: 24px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .card h2 {
+    margin: 0 0 4px;
+    font-size: 1.3rem;
+  }
+  .card .sub {
+    margin: 0 0 18px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  .qr-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 0 auto 16px;
+  }
+  .yara-frame { background: linear-gradient(160deg, var(--purple-dark), var(--purple)); }
+  .reem-frame { background: var(--dark-bg); border: 1px solid rgba(74,217,255,0.3); }
+  button.download {
+    background: none;
+    border: 1px solid var(--cream);
+    color: var(--cream);
+    padding: 8px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  button.download:hover { opacity: 1; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🎉 Scan to Celebrate 🎉</h1>
+  <div class="cards">
+    <div class="card">
+      <h2>Yara</h2>
+      <p class="sub">28th birthday</p>
+      <div class="qr-frame yara-frame" id="qr-yara"></div>
+      <button class="download" data-target="yara">Download PNG</button>
+    </div>
+    <div class="card">
+      <h2>Reem</h2>
+      <p class="sub">26th birthday</p>
+      <div class="qr-frame reem-frame" id="qr-reem"></div>
+      <button class="download" data-target="reem">Download PNG</button>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
