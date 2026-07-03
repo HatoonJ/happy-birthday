@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 26th Birthday, Reem!</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+
+<main class="page">
+
+  <section class="hero">
+    <div class="icon-row">
+      <div class="tech-icon">&lt;/&gt;</div>
+      <div class="tech-icon tech-icon-tall">{ }</div>
+      <div class="tech-icon">01</div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-amber"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">reem@birthday: ~</span>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="line"><span class="prompt">$</span> <span class="typed" data-text="whoami"></span></div>
+        <div class="line output">reem</div>
+        <div class="line"><span class="prompt">$</span> <span class="typed" data-text="cat role.txt"></span></div>
+        <div class="line output">IT Specialist &middot; turning 26 &middot; probably debugging right now</div>
+        <div class="line prompt-line" id="run-line">
+          <span class="prompt">$</span> <button id="run-btn" class="run-btn">./celebrate.sh<span class="cursor">&nbsp;</span></button>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint">click the command to run it</p>
+  </section>
+
+</main>
+
+<div id="message-modal" class="modal-overlay" hidden>
+  <div class="modal-card">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="photo-frame">
+      <!-- Sample / placeholder image. Swap this file for a real photo of Reem. -->
+      <img src="assets/img/reem-photo-placeholder.svg" alt="Photo of Reem placeholder" id="reem-photo">
+    </div>
+    <img src="assets/img/laptop.svg" alt="Laptop illustration" class="laptop">
+    <p class="message">
+      Reem, happy 26th birthday! 🎉<br>
+      May your code always compile on the first try, your wifi never drop mid-deploy,
+      and this new year bring you big wins, real growth, and way fewer 2am incident calls.
+      You deserve all of it and more.
+    </p>
+    <p class="signature">With love, always 💚</p>
+  </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

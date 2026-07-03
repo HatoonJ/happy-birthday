@@ -1,27 +1,24 @@
-# Happy Birthday, Yara! 🎉
+# Happy Birthday 🎉
 
-A birthday landing page for Yara's 28th birthday (July 7th).
+A collection of personalized birthday landing pages, one folder per person, each with its own design.
 
 ## Structure
 
-- `index.html` — the page
-- `assets/style.css` — styling (purple/teal/gold palette, no pink)
-- `assets/script.js` — countdown timer + confetti animation
-- `assets/img/` — illustrations, including `yara-photo-placeholder.svg` (swap this for a real photo)
+- `index.html` — hub page linking to each person's page
+- `yara/` — Yara's 28th birthday (July 7th). Balloons, matrix-rain hero, purple/teal/gold palette (no pink). Pop a balloon to reveal the message.
+- `reem/` — Reem's 26th birthday. IT/hacker terminal theme, green/cyan monospace. Run `./celebrate.sh` in the terminal to reveal the message.
+
+Each person folder has its own `assets/style.css`, `assets/script.js`, and `assets/img/` with a photo placeholder to swap for a real photo.
 
 ## Publish with GitHub Pages
 
-1. Create a new **public** repo on GitHub named `happy-birthday-yara` (needed for free GitHub Pages).
-2. Push this folder to it:
-   ```bash
-   git remote add origin https://github.com/<your-username>/happy-birthday-yara.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. On GitHub: **Settings → Pages → Source → Deploy from a branch**, choose `main` branch, `/ (root)` folder, then **Save**.
-4. Your page will be live at `https://<your-username>.github.io/happy-birthday-yara/` within a minute or two.
+1. Push this repo to GitHub (public repo, needed for free GitHub Pages).
+2. On GitHub: **Settings → Pages → Source → Deploy from a branch**, choose `main` branch, `/ (root)` folder, then **Save**.
+3. Pages will be live at:
+   - Hub: `https://<your-username>.github.io/happy-birthday/`
+   - Yara: `https://<your-username>.github.io/happy-birthday/yara/`
+   - Reem: `https://<your-username>.github.io/happy-birthday/reem/`
 
-## Customize
+## Adding a new person
 
-- Replace `assets/img/yara-photo-placeholder.svg` with a real photo (e.g. `yara.jpg`) and update the `src` in `index.html`.
-- Edit the birthday message in the `.message-section` of `index.html`.
+Copy an existing folder (e.g. `yara/`) as a starting point, give it its own design, and add a link card to it in the root `index.html`.

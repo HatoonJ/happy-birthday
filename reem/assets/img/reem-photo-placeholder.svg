@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+  <rect width="220" height="220" fill="#0d1117"/>
+  <rect x="10" y="10" width="200" height="200" fill="none" stroke="#4ad9ff" stroke-width="2" stroke-dasharray="6 6" opacity="0.4"/>
+  <circle cx="110" cy="88" r="38" fill="#1c2a33" stroke="#39ff9c" stroke-width="3"/>
+  <path d="M40 200 C40 145 180 145 180 200 Z" fill="#1c2a33" stroke="#39ff9c" stroke-width="3"/>
+  <text x="110" y="205" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#4ad9ff">reem.jpg</text>
+</svg>

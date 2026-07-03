@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 160" width="220" height="160">
+  <rect x="30" y="20" width="160" height="100" rx="8" fill="#10161d" stroke="#4ad9ff" stroke-width="3"/>
+  <rect x="40" y="30" width="140" height="80" fill="#0b1a1f"/>
+  <text x="110" y="65" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#39ff9c">&lt;/&gt;</text>
+  <text x="110" y="90" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#4ad9ff">happy_birthday.js</text>
+  <path d="M15 128 L205 128 L190 145 L30 145 Z" fill="#1c2a33" stroke="#39ff9c" stroke-width="2"/>
+  <circle cx="110" cy="136" r="3" fill="#39ff9c"/>
+</svg>

@@ -15,7 +15,7 @@ while ($listener.IsListening) {
   $request = $context.Request
   $response = $context.Response
   $path = $request.Url.LocalPath
-  if ($path -eq "/") { $path = "/index.html" }
+  if ($path.EndsWith("/")) { $path = $path + "index.html" }
   $filePath = Join-Path $root ($path.TrimStart("/"))
 
   $response.KeepAlive = $false

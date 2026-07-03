@@ -3,72 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 28th Birthday, Yara!</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>Happy Birthday</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(160deg, #1b1030 0%, #22283a 100%);
+    color: #fff9f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main {
+    text-align: center;
+    padding: 24px;
+  }
+  h1 {
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  a.card {
+    display: block;
+    width: 180px;
+    padding: 28px 18px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: inherit;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  a.card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.12);
+  }
+  .emoji { font-size: 2rem; display: block; margin-bottom: 10px; }
+</style>
 </head>
 <body>
-
-<canvas id="confetti-canvas"></canvas>
-
-<main class="page">
-
-  <section class="hero">
-    <canvas id="matrix-canvas"></canvas>
-    <div class="hero-content">
-
-      <div class="balloon-cluster">
-        <button class="balloon-btn" data-balloon aria-label="Pop the teal balloon">
-          <svg viewBox="0 0 90 150" class="balloon-svg">
-            <line x1="45" y1="95" x2="38" y2="150" stroke="#ffffffaa" stroke-width="2"/>
-            <ellipse cx="45" cy="55" rx="40" ry="50" fill="#17b8a6"/>
-            <ellipse cx="32" cy="35" rx="10" ry="14" fill="#ffffff" opacity="0.35"/>
-            <polygon points="38,100 52,100 45,114" fill="#17b8a6"/>
-          </svg>
-        </button>
-        <button class="balloon-btn balloon-btn-tall" data-balloon aria-label="Pop the gold balloon">
-          <svg viewBox="0 0 100 170" class="balloon-svg">
-            <line x1="50" y1="110" x2="50" y2="170" stroke="#ffffffaa" stroke-width="2"/>
-            <ellipse cx="50" cy="62" rx="46" ry="58" fill="#ffcf56"/>
-            <ellipse cx="34" cy="38" rx="12" ry="16" fill="#ffffff" opacity="0.35"/>
-            <polygon points="42,116 58,116 50,132" fill="#ffcf56"/>
-          </svg>
-        </button>
-        <button class="balloon-btn" data-balloon aria-label="Pop the orange balloon">
-          <svg viewBox="0 0 90 150" class="balloon-svg">
-            <line x1="45" y1="95" x2="52" y2="150" stroke="#ffffffaa" stroke-width="2"/>
-            <ellipse cx="45" cy="55" rx="40" ry="50" fill="#ff8c42"/>
-            <ellipse cx="32" cy="35" rx="10" ry="14" fill="#ffffff" opacity="0.35"/>
-            <polygon points="38,100 52,100 45,114" fill="#ff8c42"/>
-          </svg>
-        </button>
-      </div>
-
-      <h1 class="led-title">Happy Birthday</h1>
-      <h2 class="name">Yara!</h2>
-      <p class="date-badge">28 &middot; July 7th</p>
-      <p class="hint">🎈 pop a balloon</p>
-    </div>
-  </section>
-
-</main>
-
-<div id="message-modal" class="modal-overlay" hidden>
-  <div class="modal-card">
-    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-    <div class="photo-frame small">
-      <!-- Sample / placeholder image. Swap this file for a real photo of Yara. -->
-      <img src="assets/img/yara-photo-placeholder.svg" alt="Photo of Yara placeholder" id="yara-photo">
-    </div>
-    <img src="assets/img/cake.svg" alt="Birthday cake illustration" class="cake">
-    <p class="message">
-      Yara, wishing you the happiest 28th birthday! 🎉<br>
-      May this new year bring you endless laughter, big adventures,
-      and everything you've been hoping for. You deserve all of it and more.
-    </p>
-    <p class="signature">With love, always 💛</p>
+<main>
+  <h1>🎉 Happy Birthday 🎉</h1>
+  <div class="cards">
+    <a class="card" href="yara/">
+      <span class="emoji">🎈</span>
+      Yara's page
+    </a>
+    <a class="card" href="reem/">
+      <span class="emoji">💻</span>
+      Reem's page
+    </a>
   </div>
-</div>
-
-<script src="assets/script.js"></script>
+</main>
 </body>
 </html>
