@@ -15,22 +15,50 @@
   <section class="hero">
     <canvas id="matrix-canvas"></canvas>
     <div class="hero-content">
-      <img src="assets/img/balloons.svg" alt="Balloons illustration" class="balloons">
+
+      <div class="balloon-cluster">
+        <button class="balloon-btn" data-balloon aria-label="Pop the teal balloon">
+          <svg viewBox="0 0 90 150" class="balloon-svg">
+            <line x1="45" y1="95" x2="38" y2="150" stroke="#ffffffaa" stroke-width="2"/>
+            <ellipse cx="45" cy="55" rx="40" ry="50" fill="#17b8a6"/>
+            <ellipse cx="32" cy="35" rx="10" ry="14" fill="#ffffff" opacity="0.35"/>
+            <polygon points="38,100 52,100 45,114" fill="#17b8a6"/>
+          </svg>
+        </button>
+        <button class="balloon-btn balloon-btn-tall" data-balloon aria-label="Pop the gold balloon">
+          <svg viewBox="0 0 100 170" class="balloon-svg">
+            <line x1="50" y1="110" x2="50" y2="170" stroke="#ffffffaa" stroke-width="2"/>
+            <ellipse cx="50" cy="62" rx="46" ry="58" fill="#ffcf56"/>
+            <ellipse cx="34" cy="38" rx="12" ry="16" fill="#ffffff" opacity="0.35"/>
+            <polygon points="42,116 58,116 50,132" fill="#ffcf56"/>
+          </svg>
+        </button>
+        <button class="balloon-btn" data-balloon aria-label="Pop the orange balloon">
+          <svg viewBox="0 0 90 150" class="balloon-svg">
+            <line x1="45" y1="95" x2="52" y2="150" stroke="#ffffffaa" stroke-width="2"/>
+            <ellipse cx="45" cy="55" rx="40" ry="50" fill="#ff8c42"/>
+            <ellipse cx="32" cy="35" rx="10" ry="14" fill="#ffffff" opacity="0.35"/>
+            <polygon points="38,100 52,100 45,114" fill="#ff8c42"/>
+          </svg>
+        </button>
+      </div>
+
       <h1 class="led-title">Happy Birthday</h1>
       <h2 class="name">Yara!</h2>
       <p class="date-badge">28 &middot; July 7th</p>
+      <p class="hint">🎈 pop a balloon</p>
     </div>
   </section>
 
-  <section class="photo-section">
-    <div class="photo-frame">
+</main>
+
+<div id="message-modal" class="modal-overlay" hidden>
+  <div class="modal-card">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="photo-frame small">
       <!-- Sample / placeholder image. Swap this file for a real photo of Yara. -->
       <img src="assets/img/yara-photo-placeholder.svg" alt="Photo of Yara placeholder" id="yara-photo">
     </div>
-    <p class="photo-caption">📸 swap <code>assets/img/yara-photo-placeholder.svg</code> for a real photo of Yara</p>
-  </section>
-
-  <section class="message-section">
     <img src="assets/img/cake.svg" alt="Birthday cake illustration" class="cake">
     <p class="message">
       Yara, wishing you the happiest 28th birthday! 🎉<br>
@@ -38,9 +66,8 @@
       and everything you've been hoping for. You deserve all of it and more.
     </p>
     <p class="signature">With love, always 💛</p>
-  </section>
-
-</main>
+  </div>
+</div>
 
 <script src="assets/script.js"></script>
 </body>
