@@ -1,6 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
   <rect width="240" height="240" fill="#3a2a63"/>
-  <circle cx="120" cy="95" r="42" fill="#a78bfa"/>
-  <path d="M40 220 C40 160 200 160 200 220 Z" fill="#a78bfa"/>
-  <text x="120" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffffcc" dy="-8">Yara's photo goes here</text>
+
+  <!-- confetti -->
+  <rect x="30" y="40" width="8" height="8" fill="#ffcf56" transform="rotate(20 34 44)"/>
+  <rect x="205" y="60" width="7" height="7" fill="#17b8a6" transform="rotate(-15 208 63)"/>
+  <circle cx="200" cy="30" r="4" fill="#ff8c42"/>
+  <circle cx="25" cy="180" r="4" fill="#ffcf56"/>
+
+  <!-- neck/shoulders -->
+  <path d="M55 225 C55 175 185 175 185 225 Z" fill="#ffcf56"/>
+
+  <!-- head -->
+  <circle cx="120" cy="120" r="58" fill="#ffcf56"/>
+
+  <!-- party hat -->
+  <polygon points="120,20 92,72 148,72" fill="#17b8a6"/>
+  <polygon points="120,20 105,50 135,50" fill="#ff8c42"/>
+  <circle cx="120" cy="18" r="8" fill="#ff8c42"/>
+  <circle cx="100" cy="60" r="3" fill="#ffffff"/>
+  <circle cx="130" cy="52" r="3" fill="#ffffff"/>
+  <circle cx="140" cy="66" r="3" fill="#ffffff"/>
+
+  <!-- face -->
+  <path d="M96 118 Q100 110 104 118" stroke="#3a2a63" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M136 118 Q140 110 144 118" stroke="#3a2a63" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="92" cy="138" r="8" fill="#ff8c42" opacity="0.55"/>
+  <circle cx="148" cy="138" r="8" fill="#ff8c42" opacity="0.55"/>
+  <path d="M100 145 Q120 165 140 145" stroke="#3a2a63" stroke-width="5" fill="none" stroke-linecap="round"/>
 </svg>
