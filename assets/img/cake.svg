@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="220" height="200">
+  <rect x="30" y="120" width="160" height="60" rx="8" fill="#5b3ea6"/>
+  <rect x="30" y="120" width="160" height="14" fill="#a78bfa"/>
+  <rect x="45" y="90" width="130" height="40" rx="8" fill="#ff8c42"/>
+  <rect x="45" y="90" width="130" height="12" fill="#ffb073"/>
+  <rect x="60" y="65" width="100" height="32" rx="8" fill="#ffcf56"/>
+  <rect x="60" y="65" width="100" height="10" fill="#ffe19a"/>
+
+  <rect x="65" y="45" width="6" height="24" fill="#e8e8e8"/>
+  <rect x="107" y="40" width="6" height="29" fill="#e8e8e8"/>
+  <rect x="149" y="45" width="6" height="24" fill="#e8e8e8"/>
+  <ellipse cx="68" cy="42" rx="6" ry="9" fill="#ffcf56"/>
+  <ellipse cx="110" cy="37" rx="6" ry="9" fill="#ff8c42"/>
+  <ellipse cx="152" cy="42" rx="6" ry="9" fill="#ffcf56"/>
+
+  <circle cx="60" cy="150" r="6" fill="#17b8a6"/>
+  <circle cx="90" cy="155" r="6" fill="#ffcf56"/>
+  <circle cx="120" cy="150" r="6" fill="#17b8a6"/>
+  <circle cx="150" cy="155" r="6" fill="#ffcf56"/>
+</svg>

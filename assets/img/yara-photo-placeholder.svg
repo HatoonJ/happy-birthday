@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <rect width="240" height="240" fill="#3a2a63"/>
+  <circle cx="120" cy="95" r="42" fill="#a78bfa"/>
+  <path d="M40 220 C40 160 200 160 200 220 Z" fill="#a78bfa"/>
+  <text x="120" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#ffffffcc" dy="-8">Yara's photo goes here</text>
+</svg>
