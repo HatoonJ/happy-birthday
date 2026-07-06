@@ -49,9 +49,82 @@ qrCodes.reem = new QRCodeStyling({
 });
 qrCodes.reem.append(document.getElementById("qr-reem"));
 
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+async function buildAndDownload(target, opts) {
+  const blob = await qrCodes[target].getRawData("png");
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = () => {
+    const W = 320, H = 460;
+    const canvas = document.createElement("canvas");
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext("2d");
+
+    const grad = ctx.createLinearGradient(0, 0, W, H);
+    opts.bgColors.forEach((c, i) => grad.addColorStop(i / (opts.bgColors.length - 1), c));
+    ctx.fillStyle = grad;
+    roundRectPath(ctx, 0, 0, W, H, 24);
+    ctx.fill();
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = opts.textColor;
+    ctx.font = 'bold 26px "Segoe UI", Arial, sans-serif';
+    ctx.fillText(`${opts.emoji} Scan Me ${opts.emoji}`, W / 2, 50);
+
+    const boxSize = 260, boxX = (W - boxSize) / 2, boxY = 75;
+    ctx.fillStyle = "#ffffff";
+    roundRectPath(ctx, boxX, boxY, boxSize, boxSize, 16);
+    ctx.fill();
+
+    const qrSize = 232;
+    ctx.drawImage(img, boxX + (boxSize - qrSize) / 2, boxY + (boxSize - qrSize) / 2, qrSize, qrSize);
+
+    ctx.fillStyle = opts.textColor;
+    ctx.font = 'bold 20px "Segoe UI", Arial, sans-serif';
+    ctx.fillText(`${opts.name}'s Birthday`, W / 2, boxY + boxSize + 40);
+    ctx.globalAlpha = 0.85;
+    ctx.font = '14px "Segoe UI", Arial, sans-serif';
+    ctx.fillText(opts.subtext, W / 2, boxY + boxSize + 64);
+    ctx.globalAlpha = 1;
+
+    const link = document.createElement("a");
+    link.download = `${target}-birthday-qr.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+  img.src = url;
+}
+
 document.querySelectorAll("button.download").forEach((btn) => {
   btn.addEventListener("click", () => {
     const target = btn.dataset.target;
-    qrCodes[target].download({ name: `${target}-birthday-qr`, extension: "png" });
+    if (target === "yara") {
+      buildAndDownload("yara", {
+        bgColors: ["#241646", "#5b3ea6", "#17b8a6"],
+        textColor: "#ffcf56",
+        emoji: "🎉",
+        name: "Yara",
+        subtext: "tap to open your surprise",
+      });
+    } else {
+      buildAndDownload("reem", {
+        bgColors: ["#0d1117", "#10222a"],
+        textColor: "#39ff9c",
+        emoji: "💻",
+        name: "Reem",
+        subtext: "tap to open your surprise",
+      });
+    }
   });
 });
