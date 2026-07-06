@@ -1,13 +1,9 @@
 const qrConfigs = {
   yara: {
     data: "https://hatoonj.github.io/happy-birthday/yara/",
-    colorStops: [
-      { offset: 0, color: "#17b8a6" },
-      { offset: 0.5, color: "#ffcf56" },
-      { offset: 1, color: "#ff8c42" },
-    ],
-    cornerColor: "#ffcf56",
-    dotColor: "#ff8c42",
+    dotsColor: "#ffcf56",
+    cornerColor: "#ff8c42",
+    dotColor: "#17b8a6",
     bgColors: ["#241646", "#5b3ea6", "#17b8a6"],
     textColor: "#ffcf56",
     emoji: "🎉",
@@ -16,12 +12,9 @@ const qrConfigs = {
   },
   reem: {
     data: "https://hatoonj.github.io/happy-birthday/reem/",
-    colorStops: [
-      { offset: 0, color: "#39ff9c" },
-      { offset: 1, color: "#4ad9ff" },
-    ],
+    dotsColor: "#39ff9c",
     cornerColor: "#4ad9ff",
-    dotColor: "#39ff9c",
+    dotColor: "#4ad9ff",
     bgColors: ["#0d1117", "#10222a"],
     textColor: "#39ff9c",
     emoji: "💻",
@@ -40,7 +33,7 @@ function makeQrCode(config, size) {
     qrOptions: { errorCorrectionLevel: "H" },
     dotsOptions: {
       type: "rounded",
-      gradient: { type: "linear", rotation: 0.7, colorStops: config.colorStops },
+      color: config.dotsColor,
     },
     backgroundOptions: { color: "transparent" },
     cornersSquareOptions: { type: "extra-rounded", color: config.cornerColor },
@@ -63,7 +56,7 @@ function roundRectPath(ctx, x, y, w, h, r) {
 }
 
 // high-resolution composite for sharing/printing
-const SCALE = 3;
+const SCALE = 4;
 
 async function buildAndDownload(target) {
   const opts = qrConfigs[target];
@@ -95,7 +88,9 @@ async function buildAndDownload(target) {
     roundRectPath(ctx, boxX, boxY, boxSize, boxSize, 16 * SCALE);
     ctx.fill();
 
+    ctx.imageSmoothingEnabled = false;
     ctx.drawImage(img, boxX + (boxSize - qrPixelSize) / 2, boxY + (boxSize - qrPixelSize) / 2, qrPixelSize, qrPixelSize);
+    ctx.imageSmoothingEnabled = true;
 
     ctx.fillStyle = opts.textColor;
     ctx.font = `bold ${20 * SCALE}px "Segoe UI", Arial, sans-serif`;
